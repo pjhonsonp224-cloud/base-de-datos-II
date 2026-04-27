@@ -1,0 +1,626 @@
+/* =========================
+   RESET
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#e3f2fd,#e8f5e9);
+  color:#333;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+.container-principal{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* =========================
+   HEADER MODERNO
+========================= */
+.site-header{
+  background: linear-gradient(135deg,#0d47a1,#1976d2,#26a69a);
+  color:white;
+  padding:30px 20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.header-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:15px;
+  text-align:center;
+}
+
+.header-logo{
+  width:90px;
+  background:white;
+  padding:10px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.header-text h1{
+  font-size:2.5rem;
+  font-weight:700;
+}
+
+.header-text h2{
+  font-size:1.2rem;
+  opacity:0.9;
+}
+
+.header-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn{
+  padding:12px 20px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background: linear-gradient(135deg,#1976d2,#26a69a);
+  color:white;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   INFO ESTUDIANTE
+========================= */
+.info-estudiante{
+  background:white;
+  margin:30px auto;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  max-width:600px;
+}
+
+.info-estudiante h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#1976d2;
+}
+
+.info-estudiante li{
+  padding:10px 0;
+  border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* =========================
+   TITULO
+========================= */
+.semanas-header{
+  text-align:center;
+  font-size:2.2rem;
+  color:#1976d2;
+  margin-top:30px;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid-semanas{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:30px;
+}
+
+/* =========================
+   TARJETAS MODERNAS
+========================= */
+.tarjeta-semana{
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  position:relative;
+}
+
+.tarjeta-semana::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:linear-gradient(90deg,#1976d2,#26a69a);
+  border-radius:20px 20px 0 0;
+}
+
+.tarjeta-semana:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+.tarjeta-semana-title{
+  font-size:1.5rem;
+  font-weight:bold;
+  color:#0d47a1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  background:#0d47a1;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:auto;
+}
+
+/* =========================
+   MODALES
+========================= */
+.modal-tarea{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  visibility:hidden;
+  opacity:0;
+  transition:0.3s;
+}
+
+.modal-tarea.mostrar{
+  visibility:visible;
+  opacity:1;
+}
+
+.modal-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+  background:white;
+  border-radius:20px;
+  width:500px;
+  max-height:90vh;
+  overflow:hidden;
+  z-index:2;
+  animation:subir 0.4s ease;
+}
+
+@keyframes subir{
+  from{transform:translateY(50px); opacity:0;}
+  to{transform:translateY(0); opacity:1;}
+}
+
+/* =========================
+   PANEL ADMIN CORREDIZO
+========================= */
+#panel-admin-modal{
+  justify-content:flex-end;
+}
+
+#panel-admin-modal .modal-content{
+  width:450px;
+  height:100vh;
+  transform:translateX(100%);
+  transition:0.4s;
+  border-radius:20px 0 0 20px;
+}
+
+#panel-admin-modal.mostrar .modal-content{
+  transform:translateX(0);
+}
+
+/* =========================
+   VISOR GRANDE
+========================= */
+#modal-tarea .modal-content{
+  width:95%;
+  max-width:1200px;
+  height:90vh;
+}
+
+#v-pdf{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .header-text h1{font-size:1.8rem;}
+  .grid-semanas{grid-template-columns:1fr;}
+}
+/* =========================
+   ADMIN PANEL MODERNO (DRAWER)
+========================= */
+
+/* contenedor ya es corredizo; refinamos */
+#panel-admin-modal.modal-tarea{
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+#panel-admin-modal .modal-content{
+  width: 420px;
+  max-width: 95vw;
+  height: 100vh;
+  border-radius: 24px 0 0 24px;
+  box-shadow: -20px 0 50px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* header del panel */
+#panel-admin-modal .modal-top{
+  background: linear-gradient(135deg,#0d47a1,#1976d2,#26a69a);
+  color: #fff;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#panel-admin-modal .modal-top h3{
+  font-size: 1.3rem;
+  letter-spacing: .3px;
+}
+
+/* body scrollable */
+#panel-admin-modal .modal-body{
+  padding: 18px;
+  overflow-y: auto;
+  background: #f6f9fc;
+}
+
+/* resumen superior */
+.admin-summary{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-left: 6px solid #26a69a;
+}
+
+.admin-summary span{
+  font-weight: 600;
+  color: #1976d2;
+}
+
+/* botón nueva semana */
+.admin-add-btn{
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 14px;
+}
+
+/* tarjeta de semana */
+.admin-card{
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 14px;
+  border-left: 5px solid #1976d2;
+}
+
+/* fila superior */
+.admin-card-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* input nombre semana */
+.admin-input{
+  width: 70%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-weight: 600;
+}
+
+.admin-input:focus{
+  outline: none;
+  border-color: #1976d2;
+}
+
+/* contador archivos */
+.admin-badge{
+  background: #1976d2;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* textarea */
+.admin-textarea{
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-top: 8px;
+  resize: none;
+}
+
+/* botones acción */
+.admin-actions{
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.admin-btn{
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-upload{ background:#26a69a; color:#fff; }
+.btn-delete{ background:#f44336; color:#fff; }
+
+/* lista archivos */
+.admin-files{
+  margin-top: 12px;
+}
+
+.admin-file{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f7fb;
+  padding: 8px 10px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+/* botones archivo */
+.admin-file-actions{
+  display: flex;
+  gap: 6px;
+}
+
+.file-btn{
+  border: none;
+  padding: 5px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.btn-view{ background:#1976d2; color:#fff; }
+.btn-replace{ background:#ff9800; color:#fff; }
+.btn-remove{ background:#f44336; color:#fff; }
+
+/* hover suaves */
+.admin-card:hover{
+  transform: translateY(-2px);
+  transition: 0.2s;
+}
+
+/* scrollbar bonito */
+#panel-admin-modal .modal-body::-webkit-scrollbar{
+  width:6px;
+}
+#panel-admin-modal .modal-body::-webkit-scrollbar-thumb{
+  background:#1976d2;
+  border-radius:10px;
+}
+/* =========================
+   VISOR PROFESIONAL
+========================= */
+
+.viewer-container{
+  display: flex;
+  height: calc(100% - 70px);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* LISTA DE ARCHIVOS */
+.viewer-sidebar{
+  width: 260px;
+  background: #f4f7fb;
+  border-radius: 16px;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.viewer-file{
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.viewer-file:hover{
+  background: #1976d2;
+  color: white;
+}
+
+/* PREVISUALIZACIÓN */
+.viewer-preview{
+  flex: 1;
+  background: #e3f2fd;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewer-actions{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.viewer-frame{
+  flex: 1;
+  border: none;
+  width: 100%;
+}
+
+/* BOTONES */
+.viewer-btn{
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-download{
+  background: #1976d2;
+  color: white;
+}
+
+.btn-github{
+  background: #24292e;
+  color: white;
+}
+/* =========================
+   HEADER MODALES MEJORADO
+========================= */
+
+.modal-top{
+  position: relative;
+  display: flex;
+  justify-content: center; /* centra el título */
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.modal-top h3{
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* botón cerrar fijo a la derecha */
+.btn-close{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+/* BOTÓN REGRESAR */
+.btn-back {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-back:hover {
+  background: #d32f2f;
+}
+/* =========================
+   UNIDADES HORIZONTALES (SIN SCROLL)
+========================= */
+
+/* contenedor de unidades */
+#contenedor-semanas{
+  display: flex;
+  flex-wrap: wrap; /* permite bajar si no entra */
+  gap: 25px;
+  padding: 30px;
+  justify-content: center;
+}
+
+/* caja de unidad */
+.unidad{
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-top: 5px solid #1976d2;
+}
+
+/* título unidad */
+.titulo-unidad{
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #1976d2;
+  font-weight: 700;
+}
+
+/* =========================
+   SEMANAS EN FILA (SIN SCROLL)
+========================= */
+
+.grid-unidad{
+  display: flex;
+  flex-wrap: wrap; /* importante */
+  justify-content: center;
+  gap: 15px;
+}
+
+/* tarjetas más pequeñas dentro de unidad */
+.unidad .tarjeta-semana{
+  width: 120px;
+  padding: 20px;
+}

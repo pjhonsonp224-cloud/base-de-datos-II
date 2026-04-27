@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repositorio Académico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container-principal">
+
+<header class="site-header">
+  <div class="header-container"> 
+    <img src="logo.png" alt="Logo UPLA" class="header-logo"/>
+    <div class="header-text">
+      <h1>Repositorio Académico</h1>
+      <h2>Universidad Peruana Los Andes</h2>
+      <p>Seguimiento de tareas semanales</p>
+    </div>
+    <div class="header-actions">
+      <a href="https://github.com/" target="_blank" class="btn btn-primary">GitHub</a>
+      <button id="admin-btn" class="btn btn-primary">Ingresar</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="info-estudiante">
+  <h2>Información del Estudiante</h2>
+  <ul>
+    <li><strong>Nombre:</strong> PARIONA MARTIN JHONSON EDUARDO</li>
+    <li><strong>Código:</strong> S03802A</li>
+    <li><strong>Carrera:</strong> Ingeniería de Sistemas</li>
+    <li><strong>Correo:</strong> s03802a@upla.edu.pe</li>
+  </ul>
+</section>
+
+<h2 class="semanas-header">Tareas por Unidades</h2>
+<div id="contenedor-semanas" class="grid-semanas"></div>
+
+</main>
+
+<footer>
+  <p>© <span id="footer-year"></span> Universidad Peruana Los Andes</p>
+</footer>
+
+</div>
+
+<!-- LOGIN -->
+<div id="login-modal" class="modal-tarea">
+  <div class="modal-overlay" onclick="cerrarCualquierModal('login-modal')"></div>
+  <div class="modal-content">
+    <div class="modal-top">
+      <h3>Acceso</h3>
+      <button onclick="cerrarCualquierModal('login-modal')" class="btn-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <select id="login-perfil">
+        <option value="usuario">Usuario</option>
+        <option value="admin">Admin</option>
+      </select>
+      <input type="password" id="login-pass">
+      <button id="ejecutar-login" class="btn btn-primary">Entrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODALES -->
+<div id="panel-admin-modal" class="modal-tarea"></div>
+<div id="modal-tarea" class="modal-tarea"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
