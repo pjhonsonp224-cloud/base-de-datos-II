@@ -275,7 +275,7 @@ modalVisor.innerHTML = `
     <div class="viewer-actions">
       <a id="btn-descargar" class="viewer-btn btn-download">⬇ Descargar</a>
       <button class="viewer-btn btn-github"
-        onclick="window.open('https://github.com/')">
+        onclick="window.open('https://github.com/pjhonsonp224-cloud/base-de-datos-II.git')">
         🌐 GitHub
       </button>
     </div>
