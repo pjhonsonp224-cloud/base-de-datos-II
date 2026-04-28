@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             label: "Semana 1", 
             descripcion: "Guía paso a paso para la instalación y configuración de VMware Workstation.", 
             archivos: [
-                { nombre: "Guia_VMware.pdf", enlace: "archivos/Guia_VMware.pdf" }
+                { nombre: "Guia_VMware.pdf", enlace: "archivos/Arquitectura de Sistemas de Bases de Datos.pdf" }
             ] 
         },
         { 
